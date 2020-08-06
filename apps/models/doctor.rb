@@ -25,7 +25,7 @@ doc3 = Doctor.new("ted", "quack", 1)
 
     def self.find_by_speciality(specialty) #<--search param
         Doctor.all.select do |doctor|
-        doctor.specialty == specialty #<--
+            doctor.specialty == specialty #<--
         end
     end
     def self.find_by_experience(exp)
