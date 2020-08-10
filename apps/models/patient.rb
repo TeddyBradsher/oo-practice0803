@@ -12,14 +12,31 @@ class Patient
         @@all
     end
 
-    def increase_impatience
-        self.impatience += 1
-    end
-
     def inquire_appt_ready
-        self.impatience += 1
+        increase_impatience
         "The Dr should be ready soon. Please take your seat and don't speak to me without your mask on."
     end
 
+    def appointments
+        Appointment.all.select do |appt|
+            appt.doctor == self
+        end
+    end
+
+    def doctors
+        appointments.map do |doc|
+            doc.doctor
+        end
+    end
+
+    def create_appointment(doctor)
+        Appointment.new(self, doctor)
+    end
+
+
+    private
+    def increase_impatience
+        self.impatience += 1
+    end
     
 end
