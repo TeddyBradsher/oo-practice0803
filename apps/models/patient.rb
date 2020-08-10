@@ -17,16 +17,16 @@ class Patient
         "The Dr should be ready soon. Please take your seat and don't speak to me without your mask on."
     end
 
-    def appointments
+   def appointments
         Appointment.all.select do |appt|
-            appt.doctor == self
+            appt.patient == self
         end
     end
 
     def doctors #not sure how to make this work.  it isnt broken, but also isnt returning what i want. also not sure how to correctly implement .uniq in this method. 
-        appointments.map do |doc|
-            doc.doctor
-        end
+        appointments.map do |pat| #< - i needed to take my current class instead of the appointment class, and use the appointments method i created.
+            pat.doctor
+        end.uniq
     end
 
     def create_appointment(doctor)

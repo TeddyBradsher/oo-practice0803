@@ -14,7 +14,11 @@ ted = Patient.new("ted", 20)
 mike = Patient.new("Michael", 23)
 bill = Patient.new("william", 14)
 
-appt1 = Appointment.new(doc1, ted)
+appt1 = Appointment.new(ted, doc1)
+Appointment.new(ted, doc2)
+Appointment.new(ted, doc2)
+Appointment.new(ted, doc2)
+Appointment.new(mike, doc2)
 
 
 binding.pry
