@@ -23,7 +23,7 @@ class Patient
         end
     end
 
-    def doctors
+    def doctors #not sure how to make this work.  it isnt broken, but also isnt returning what i want. also not sure how to correctly implement .uniq in this method. 
         appointments.map do |doc|
             doc.doctor
         end
